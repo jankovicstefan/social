@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f7f8f9;
+}
+#friends {
+    background-color: khaki;
+    margin: 6px;
+}
+
+#fofriends {
+    background-color: rgba(140, 200, 240, 0.699);
+    margin: 6px;
+}
