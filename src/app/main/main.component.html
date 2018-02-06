@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"> <b>Social</b> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right ">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <b>Choose  User </b> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li   *ngFor="let user of users" (click)=onSelect(user)>
+              <a href="#"> {{user.firstName}} {{user.surname}}  </a>
+           </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<div class="container" *ngIf="selectedUser" >
+
+  <div class="row align-items-center">
+    <span>
+      <h1> <b> {{ selectedUser.firstName }} </b>  {{ selectedUser.surname }} </h1>  
+      <h3> </h3>
+      <h3> <b> Age: </b> {{ selectedUser.age}} </h3>
+      <h3> <b> Gender: </b> {{ selectedUser.gender}} </h3>
+    </span>
+  </div>
+  <hr>
+  <h3> <b> Direct </b> Friends </h3>
+  <div class="row align-items-center">
+    <div class="col-md-2" *ngFor="let user of friends" (click)=onSelect(user) id="friends">
+      <a href="#"> <h3> <b>{{user.firstName}} </b></h3> <h4>{{user.surname}}  </h4> </a>
+    </div>
+  </div>
+  <hr>
+  <h3> <b> Friends </b> of Friends </h3>
+  <div class="row align-items-center">
+      <div class="col-md-2" *ngFor="let user of fofriends" (click)=onSelect(user) id="fofriends">
+        <a href="#"> <h3> <b>{{user.firstName}} </b></h3> <h4>{{user.surname}}  </h4> </a>
+      </div>
+    </div>
+</div>
+
+
+
+
+ 
